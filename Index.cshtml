@@ -9,8 +9,10 @@
                 var target = $(this).attr('data-target');
                 // console.log(target);
                 //console.log('enter');
-                $('#description div').addClass('hidden-content');
-                $(target).removeClass('hidden-content');
+                if (typeof target != 'undefined') {
+                    $('#description div').addClass('hidden-content');
+                    $(target).removeClass('hidden-content');
+                }
                 //handle backdrop
                 $(this).find('.back-drop').addClass('in');
 
@@ -19,10 +21,12 @@
                 var target = $(this).attr('data-target');
                 //console.log(target);
                 //console.log('leave');
-                $('#description div').addClass('hidden-content');
-                //
-                if ($('#general').hasClass('hidden-content'))
-                    $('#general').removeClass('hidden-content');
+                if (typeof target != 'undefined') {
+                    $('#description div').addClass('hidden-content');
+                    //
+                    if ($('#general').hasClass('hidden-content'))
+                        $('#general').removeClass('hidden-content');
+                }
                 //handle backdrop
                 $(this).find('.back-drop').removeClass('in');
             });
@@ -91,11 +95,7 @@
                         @*Topography image (Color stretched)*@
                         <img src="~/client/images/SW_stretch.JPG" />
                     </a>
-                </div>
-
-            </div>
-            <div class="clear"></div>
-            <div class="inline-container">
+                </div>                    
                 <div class="placeholder-panel topography-image" data-target="#slope">
                     <a target="_blank" href="http://bit.ly/1dPewQA">
                         <div class="back-drop">
@@ -124,7 +124,6 @@
                     </a>
                 </div>
             </div>
-            <div class="clear"></div>
         </div>
         <div class="col-sm-12" id="description">
             <div id="general">
@@ -185,63 +184,209 @@
     <div class="row">
         <div class="col-sm-12">
             <h4>Countywide Services</h4>
-            <div class="inline-container" style="max-width:800px;">
-                <div class="placeholder-panel topography-image" data-target="#dem">
+            <div class="inline-container">
+                <div class="placeholder-panel topography-image" >
                     <a @*target="_blank"*@ href="#">
-                        <div class="back-drop">
-                            <h4>DEM (feet)</h4>
+                        <div class="title">
+                            <h4>Allengay</h4>
                         </div>
-                        @*DEM*@
-                        <img src="~/client/images/SW_dem.JPG" />
+                        <img src="/client/images/countywide/allegany.jpg" alt="" />
                     </a>
                 </div>
-                <div class="placeholder-panel topography-image" data-target="#dem">
+                <div class="placeholder-panel topography-image" >
                     <a target="_blank" href="http://bit.ly/1dPgY9H">
-                        <div class="back-drop">
-                            <h4>DEM (meters)</h4>
+                        <div class="title">
+                            <h4>Anne Arundel</h4>
                         </div>
-                        @*DEM*@
-                        <img src="~/client/images/SW_dem.JPG" />
+                        <img src="/client/images/countywide/annearundel.jpg" alt="" />
                     </a>
                 </div>
-                <div class="placeholder-panel topography-image" data-target="#colorStretched">
-                    <a target="_blank" href="http://bit.ly/1dPivws">
-                        <div class="back-drop">
-                            <h4>Color stretched</h4>
-                        </div>
-                        @*Topography image (Color stretched)*@
-                        <img src="~/client/images/SW_stretch.JPG" />
-                    </a>
-                </div>
-                <div class="placeholder-panel topography-image" data-target="#dem">
+
+                <div class="placeholder-panel topography-image" >
                     <a @*target="_blank"*@ href="#">
-                        <div class="back-drop">
-                            <h4>DEM (feet)</h4>
+                        <div class="title">
+                            <h4>Baltimore</h4>
                         </div>
-                        @*DEM*@
-                        <img src="~/client/images/SW_dem.JPG" />
+                        <img src="/client/images/countywide/baltimore.jpg" alt="" />
                     </a>
                 </div>
-                <div class="placeholder-panel topography-image" data-target="#dem">
+                <div class="placeholder-panel topography-image" >
                     <a target="_blank" href="http://bit.ly/1dPgY9H">
-                        <div class="back-drop">
-                            <h4>DEM (meters)</h4>
+                        <div class="title">
+                            <h4>Baltimore City</h4>
                         </div>
-                        @*DEM*@
-                        <img src="~/client/images/SW_dem.JPG" />
+                        <img src="/client/images/countywide/baltimorecity.jpg" alt="" />
                     </a>
                 </div>
-                <div class="placeholder-panel topography-image" data-target="#colorStretched">
+                <div class="placeholder-panel topography-image" >
                     <a target="_blank" href="http://bit.ly/1dPivws">
-                        <div class="back-drop">
-                            <h4>Color stretched</h4>
+                        <div class="title">
+                            <h4>Calvert</h4>
                         </div>
-                        @*Topography image (Color stretched)*@
-                        <img src="~/client/images/SW_stretch.JPG" />
+                        <img src="/client/images/countywide/calvert.jpg" alt="" />
                     </a>
                 </div>
-            </div>
-            <div class="clear"></div>
+                <div class="placeholder-panel topography-image" >
+                    <a target="_blank" href="http://bit.ly/1dPivws">
+                        <div class="title">
+                            <h4>Caroline</h4>
+                        </div>
+                        <img src="/client/images/countywide/caroline.jpg" alt="" />
+                    </a>
+                </div>
+                <div class="placeholder-panel topography-image" >
+                    <a target="_blank" href="http://bit.ly/1dPivws">
+                        <div class="title">
+                            <h4>Carroll</h4>
+                        </div>
+                        <img src="/client/images/countywide/carroll.jpg" alt="" />
+                    </a>
+                </div>
+                <div class="placeholder-panel topography-image" >
+                    <a target="_blank" href="http://bit.ly/1dPivws">
+                        <div class="title">
+                            <h4>Cecil</h4>
+                        </div>
+                        <img src="/client/images/countywide/cecil.jpg" alt="" />
+                    </a>
+                </div>
+                <div class="placeholder-panel topography-image" >
+                    <a target="_blank" href="http://bit.ly/1dPivws">
+                        <div class="title">
+                            <h4>Charles</h4>
+                        </div>
+                        <img src="/client/images/countywide/charles.jpg" alt="" />
+                    </a>
+                </div>
+                <div class="placeholder-panel topography-image" >
+                    <a target="_blank" href="http://bit.ly/1dPivws">
+                        <div class="title">
+                            <h4>Dorchester</h4>
+                        </div>
+                        <img src="/client/images/countywide/dorchester.jpg" alt="" />
+                    </a>
+                </div>
+                <div class="placeholder-panel topography-image" >
+                    <a target="_blank" href="http://bit.ly/1dPivws">
+                        <div class="title">
+                            <h4>Frederick</h4>
+                        </div>
+                        <img src="/client/images/countywide/frederick.jpg" alt="" />
+                    </a>
+                </div>
+                <div class="placeholder-panel topography-image" >
+                    <a target="_blank" href="http://bit.ly/1dPivws">
+                        <div class="title">
+                            <h4>Garrett</h4>
+                        </div>
+                        <img src="/client/images/countywide/garrett.jpg" alt="" />
+                    </a>
+                </div>
+                <div class="placeholder-panel topography-image" >
+                    <a target="_blank" href="http://bit.ly/1dPivws">
+                        <div class="title">
+                            <h4>Harford</h4>
+                        </div>
+                        <img src="/client/images/countywide/harford.jpg" alt="" />
+                    </a>
+                </div>
+                <div class="placeholder-panel topography-image" >
+                    <a target="_blank" href="http://bit.ly/1dPivws">
+                        <div class="title">
+                            <h4>Howard</h4>
+                        </div>
+                        <img src="/client/images/countywide/howard.jpg" alt="" />
+                    </a>
+                </div>
+                <div class="placeholder-panel topography-image" >
+                    <a target="_blank" href="http://bit.ly/1dPivws">
+                        <div class="title">
+                            <h4>Kent</h4>
+                        </div>
+                        <img src="/client/images/countywide/kent.jpg" alt="" />
+                    </a>
+                </div>
+                <div class="placeholder-panel topography-image" >
+                    <a target="_blank" href="http://bit.ly/1dPivws">
+                        <div class="title">
+                            <h4>Montgomery</h4>
+                        </div>
+                        <img src="/client/images/countywide/montgomery.jpg" alt="" />
+                    </a>
+                </div>
+                <div class="placeholder-panel topography-image" >
+                    <a target="_blank" href="http://bit.ly/1dPivws">
+                        <div class="title">
+                            <h4>Prince Georges</h4>
+                        </div>
+                        <img src="/client/images/countywide/princegeorges.jpg" alt="" />
+                    </a>
+                </div>
+                <div class="placeholder-panel topography-image" >
+                    <a target="_blank" href="http://bit.ly/1dPivws">
+                        <div class="title">
+                            <h4>Queen Anne's</h4>
+                        </div>
+                        <img src="/client/images/countywide/queenannes.jpg" alt="" />
+                    </a>
+                </div>
+                <div class="placeholder-panel topography-image" >
+                    <a target="_blank" href="http://bit.ly/1dPivws">
+                        <div class="title">
+                            <h4>Somerset</h4>
+                        </div>
+                        <img src="/client/images/countywide/somerset.jpg" alt="" />
+                    </a>
+                </div>
+                <div class="placeholder-panel topography-image" >
+                    <a target="_blank" href="http://bit.ly/1dPivws">
+                        <div class="title">
+                            <h4>St. Mary's</h4>
+                        </div>
+                        <img src="/client/images/countywide/stmarys.jpg" alt="" />
+                    </a>
+                </div>
+                <div class="placeholder-panel topography-image" >
+                    <a target="_blank" href="http://bit.ly/1dPivws">
+                        <div class="title">
+                            <h4>Talbot</h4>
+                        </div>
+                        <img src="/client/images/countywide/talbot.jpg" alt="" />
+                    </a>
+                </div>
+                <div class="placeholder-panel topography-image" >
+                    <a target="_blank" href="http://bit.ly/1dPivws">
+                        <div class="title">
+                            <h4>Washington</h4>
+                        </div>
+                        <img src="/client/images/countywide/washington.jpg" alt="" />
+                    </a>
+                </div>
+                <div class="placeholder-panel topography-image" >
+                    <a target="_blank" href="http://bit.ly/1dPivws">
+                        <div class="title">
+                            <h4>Washington DC</h4>
+                        </div>
+                        <img src="/client/images/countywide/washingtondc.jpg" alt="" />
+                    </a>
+                </div>
+                <div class="placeholder-panel topography-image" >
+                    <a target="_blank" href="http://bit.ly/1dPivws">
+                        <div class="title">
+                            <h4>Wicomico</h4>
+                        </div>
+                        <img src="/client/images/countywide/wicomico.jpg" alt="" />
+                    </a>
+                </div>
+                <div class="placeholder-panel topography-image" >
+                    <a target="_blank" href="http://bit.ly/1dPivws">
+                        <div class="title">
+                            <h4>Worcester</h4>
+                        </div>
+                        <img src="/client/images/countywide/worcester.jpg" alt="" />
+                    </a>
+                </div>
+            </div>           
         </div>
     </div>
     <div class="row">

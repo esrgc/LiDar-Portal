@@ -50,7 +50,7 @@ h1, h2, h3, h4, h5, h6 {
             opacity: 0.6;
         }
 
-        > h1, h2, h3, h4, h5 {
+        h1, h2, h3, h4, h5 {
             color: #b6ceea;
             text-align: center;
             margin-top: 25%;
@@ -58,8 +58,20 @@ h1, h2, h3, h4, h5, h6 {
         }
     }
 
+    .title {
+        padding: 5px;
+        margin-bottom: 10px;
+        h1, h2, h3, h4, h5 {
+            color: #7f9ec3;
+            text-align: center;
+            margin: 0;
+
+        }
+    }
+
     img {
         width: 100%;
+        border: 1px solid @border-color;
         height: auto;
     }
 }

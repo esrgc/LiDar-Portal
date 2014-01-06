@@ -1,4 +1,4 @@
-﻿.inline-block {
+.inline-block {
   display: inline-block;
 }
 .placeholder-panel {
@@ -89,7 +89,6 @@
 }
 .inline-container > div {
   display: inline-block;
-  float: left;
 }
 .clear {
   clear: both;

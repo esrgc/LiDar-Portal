@@ -1,4 +1,4 @@
-﻿.inline-block {
+.inline-block {
   display: inline-block;
 }
 .placeholder-panel {
@@ -89,7 +89,6 @@
 }
 .inline-container > div {
   display: inline-block;
-  float: left;
 }
 .clear {
   clear: both;
@@ -224,7 +223,7 @@ h6 {
 .topography-image .back-drop.in {
   opacity: 0.6;
 }
-.topography-image .back-drop > h1,
+.topography-image .back-drop h1,
 .topography-image .back-drop h2,
 .topography-image .back-drop h3,
 .topography-image .back-drop h4,
@@ -234,8 +233,22 @@ h6 {
   margin-top: 25%;
   vertical-align: middle;
 }
+.topography-image .title {
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.topography-image .title h1,
+.topography-image .title h2,
+.topography-image .title h3,
+.topography-image .title h4,
+.topography-image .title h5 {
+  color: #7f9ec3;
+  text-align: center;
+  margin: 0;
+}
 .topography-image img {
   width: 100%;
+  border: 1px solid #dddddd;
   height: auto;
 }
 .topography-description {
