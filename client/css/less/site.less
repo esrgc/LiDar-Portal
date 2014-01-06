@@ -1,0 +1,73 @@
+﻿@import "library.less";
+
+body, html {
+    height: 100%;
+    width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: @link-color;
+}
+
+#description {
+    min-height: 120px;
+
+    > div {
+        .ease-transition(display, 0.5s);
+    }
+}
+
+#elevationMap {
+    > img {
+        max-width: 80%;
+    }
+}
+
+.topography-image {
+    margin: 0 20px 20px 0;
+    height: auto;
+    width: 200px;
+    cursor: pointer;
+    position: relative;
+
+    .back-drop {
+        .rounded-corner;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #000;
+        opacity: 0;
+        filter: alpha(opacity=50);
+        z-index: 1050;
+        -moz-transition: opacity .3s ease;
+        -o-transition: opacity .3s ease;
+        -webkit-transition: opacity .3s ease;
+        transition: opacity .3s ease;
+
+        &.in {
+            opacity: 0.6;
+        }
+
+        > h1, h2, h3, h4, h5 {
+            color: #b6ceea;
+            text-align: center;
+            margin-top: 25%;
+            vertical-align: middle;
+        }
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.topography-description {
+    width: 65%;
+}
+
+.hidden-content {
+    display: none;
+}
