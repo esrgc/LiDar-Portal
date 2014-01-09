@@ -194,6 +194,16 @@ h6 {
   -webkit-transition: display 0.5s ease;
   transition: display 0.5s ease;
 }
+#metadataMap {
+  width: 450px;
+  height: 400px;
+  overflow: hidden;
+  border: none;
+  margin: 0;
+}
+#viewer {
+  float: left;
+}
 #elevationMap > img {
   max-width: 80%;
 }
