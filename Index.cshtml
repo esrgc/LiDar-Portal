@@ -1,5 +1,5 @@
 ﻿@{
-    Page.Title = "LiDAR";
+    Page.Title = "MD iMap LiDAR Library";
     Layout = "_SiteLayout.cshtml";
 }
 @section scripts {
@@ -42,7 +42,7 @@
         <div class="col-sm-12">
             <div class="inline-container">
                 <div class="transparent-placeholder" id="viewer">
-                    <div class="placeholder-panel topography-image" >
+                    <div class="placeholder-panel topography-image">
                         <a target="_blank" href="@topoViewer">
                             <img src="~/client/images/lidarViewer.jpg" /></a>
                     </div>
@@ -51,10 +51,9 @@
                     <div>
                         <h4>Maryland Topography Viewer</h4>
                         <p>
-                            The Maryland Topography Viewer is a web application that allows
-                            users to view and interact with the elevation services hosted
-                            on the Maryland LiDAR Server
-                            Users can view, query, and more on desktop and mobile devices.
+                            The Maryland Topography Viewer is a web application that allows users
+                            to view and interact with the elevation services hosted on the Maryland 
+                            LiDAR Server. Users can view, query, and more on desktop and mobile devices.
                         </p>
                         <p>
                             Explore the Maryland Topography Viewer <a target="_blank" href="@topoViewer">here</a>
@@ -62,6 +61,7 @@
                     </div>
                 </div>
             </div>
+            <div class="clear"></div>
         </div>
     </div>
     <div class="row">
@@ -179,6 +179,18 @@
                     location or for graphical display purposes to enhance the relief of a surface.  
                 </p>
             </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <h4>Status map <small>
+                <a href="http://maryland.maps.arcgis.com/home/webmap/viewer.html?webmap=f02c54adaf0548c99a5c479c918ac45d&amp;extent=-80.7182,36.8443,-74.1044,40.4844"
+                    target="_blank">(View Larger Map)</a>
+            </small></h4>
+            <iframe id="metadataMap"
+                src="http://maryland.maps.arcgis.com/home/webmap/templates/OnePane/basicviewer/embed.html?webmap=f02c54adaf0548c99a5c479c918ac45d&amp;gcsextent=-80.0315,36.8311,-76.5324,40.4969&amp;displayslider=true&amp;displaylegend=true&amp;displaydetails=true"></iframe>
+            <br />
+            
         </div>
     </div>
     <div class="row">
@@ -563,9 +575,10 @@
                                 </p>
                                 <i>ArcGIS Online</i>
                                 <p>
-                                    To view in ArcGIS online visit the Maryland State ArcGIS online gallery at
-                                    <br />
-                                    <a target="_blank" href="http://maryland.maps.arcgis.com/home/index.html ">http://maryland.maps.arcgis.com/home/index.html 
+                                    To view Lidar in ArcGIS online, select any of the image thumbnails above under 
+                                    Statewide or Countywide Services or search for Lidar on the Maryland State 
+                                    ArcGIS online gallery at 
+                                    <a target="_blank" href="http://maryland.maps.arcgis.com/home/index.html ">http://maryland.maps.arcgis.com/home/index.html
                                     </a>
                                 </p>
                                 <i>ArcGIS Desktop</i>
@@ -580,6 +593,28 @@
                                     <li>Click Finish (an alert may pop up notifying that the connection was made successfully).</li>
                                     <li>The new server connection will appear in the ArcCatalog window. After expanding the server, select the desired Image Service.</li>
                                 </ol>
+                                <strong><small>* Viewing Tip</small></strong><br />
+                                <ul>
+                                    <li>ArcGIS Desktop enables the use of raster functions. 
+                                        Functions provide users with fast on-the-fly processing options without changing the actual data.
+                                        Raster functions have been added to all of the countywide dem_m image services.
+                                    </li>
+                                    <li>
+                                        <span>To apply:</span><br />
+                                        <ul>
+                                            <li>Add in the countywide dem_m service</li>
+                                            <li>Right click the service in the table of contents > Properties > Server Functions</li>
+                                            <li>Select the Functions drop-down</li>
+                                            <li>Choose one from the following function: Aspect, DEM_FT, Hillshade, None, Slope, Stretched. > Apply > Ok.</li>
+                                            <li>If choosing DEM_FT, an additional step is necessary.
+                                                <br />
+                                                <ul>
+                                                    <li>Select Symbology > Scroll down to Statistics > Select From Current Display > Apply > Ok.</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
                                 <i>QGIS</i>
                                 @*<span>To view in Quantum GIS</span>*@
                                 <ol>
@@ -667,19 +702,8 @@
                                     <a target="_blank" href="~/client/download/Metadata/Wicomico/">Wicomico</a><br />
                                     <a target="_blank" href="~/client/download/Metadata/Worcester/">Worcester</a>
                                 </p>
-                                <div>
-                                    <span>Status map</span><br />
-                                    <iframe id="metadataMap"
-                                        src="http://maryland.maps.arcgis.com/home/webmap/embedViewer.html?webmap=f02c54adaf0548c99a5c479c918ac45d&amp;extent=-80.7182,36.8443,-74.1044,40.4844">
-                                    </iframe>
-                                    <br />
-                                    <small>
-                                        <a href="http://maryland.maps.arcgis.com/home/webmap/viewer.html?webmap=f02c54adaf0548c99a5c479c918ac45d&amp;extent=-80.7182,36.8443,-74.1044,40.4844"
-                                            target="_blank">View Larger Map</a>
-                                    </small>
-                                </div>
                                 <p>
-                                    <a href="~/client/download/metadata/lidarmetadata.xlsx">Download table view</a>
+                                    <a href="~/client/download/metadata/lidarmetadata_portal.xlsx">Download table view</a>
                                 </p>
                                 <p>*Metadata is also attached to each image service and can be viewed in ArcMap and ArcCatalog.</p>
                             </div>
