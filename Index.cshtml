@@ -21,14 +21,24 @@
                 var target = $(this).attr('data-target');
                 //console.log(target);
                 //console.log('leave');
+
+                //handle backdrop
+                $(this).find('.back-drop').removeClass('in');
                 if (typeof target != 'undefined') {
                     $('#description div').addClass('hidden-content');
                     //
                     if ($('#general').hasClass('hidden-content'))
                         $('#general').removeClass('hidden-content');
                 }
-                //handle backdrop
-                $(this).find('.back-drop').removeClass('in');
+            });
+            $(document).on('click', '#fqaToggle a', function (e) {
+                e.preventDefault();
+                $(this).addClass('hidden-content');
+                $(this).siblings().removeClass('hidden-content');
+                if ($(this).attr('data-toggle') == 'expand')
+                    $('#fqa .panel-collapse').collapse('show');
+                else
+                    $('#fqa .panel-collapse').collapse('hide');
             });
         });
     </script>
@@ -38,7 +48,7 @@
     var topoViewer = "http://apps.esrgc.org/maps/md-lidar-viewer/ ";
 }
 <div class="container">
-    <div class="row">
+    <div class="row" id="top">
         <div class="col-sm-12">
             <div class="inline-container">
                 <div class="transparent-placeholder" id="viewer">
@@ -57,6 +67,8 @@
                         </p>
                         <p>
                             Explore the Maryland Topography Viewer <a target="_blank" href="@topoViewer">here</a>
+                            <br />
+                            <a href="#fqa"><small>Frequently Asked Questions</small></a>
                         </p>
                     </div>
                 </div>
@@ -65,16 +77,34 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-12">
+        <div class="col-md-12">
+            <h4>Maryland Lidar Status Map</h4>
+            <div id="elevationMap">
+                <a href="http://bit.ly/K6MSFA" target="_blank">
+                    <img src="~/client/images/acquisition_overlay.jpg" alt="" class="img-thumbnail" />
+                </a>
+            </div>
+            <small><i>Click the thumbnail to view the Lidar Status Map in ArcGIS online</i></small>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-9">
             @*<h4>Maryland LiDAR Server</h4>*@
             <h4>Statewide Services</h4>
+            <p>
+                <small>
+                    <i>Hover thumbnails for more information on each derivative product.  Click the thumbnails to view the
+                    products in ArcGIS online</i>
+                </small>
+            </p>
             <div class="inline-container">
                 <div class="placeholder-panel topography-image" data-target="#dem">
-                    <a @*target="_blank"*@ href="#">
+
+                    <a target="_blank" href="http://bit.ly/K6NkUq">
+                        @*DEM*@
                         <div class="back-drop">
                             <h4>DEM (feet)</h4>
                         </div>
-                        @*DEM*@
                         <img src="~/client/images/SW_dem.JPG" />
                     </a>
                 </div>
@@ -106,6 +136,7 @@
                     </a>
                 </div>
                 <div class="placeholder-panel topography-image" data-target="#aspect">
+
                     <a target="_blank" href="http://bit.ly/1dPfFrf">
                         <div class="back-drop">
                             <h4>Aspect</h4>
@@ -115,6 +146,7 @@
                     </a>
                 </div>
                 <div class="placeholder-panel topography-image" data-target="#hillshade">
+
                     <a target="_blank" href="http://bit.ly/1dPkQr2 ">
                         <div class="back-drop">
                             <h4>Hillshade</h4>
@@ -124,75 +156,69 @@
                     </a>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-12" id="description">
-            <div id="general">
-                <p>
-                    The Maryland LIDAR server has been created to provide citizens access to statewide 
+            <div class="row">
+                <div class="col-sm-12" id="description">
+                    <div id="general">
+                        <p>
+                            The Maryland LIDAR server has been created to provide citizens access to statewide 
                     elevation information for use in a variety of studies and applications.
                     The Maryland LIDAR server maintains the best available elevation data and 
                     provides image services in both county and statewide extents. 
-                </p>
-                <p>
-                    These services can be used in a variety of software products including ESRI,
+                        </p>
+                        <p>
+                            These services can be used in a variety of software products including ESRI,
                     Google Earth, and Quantum GIS. See FAQs for instructions, metadata and 
                     <a target="_blank" href="@fullServiceList">full list of available services.</a>
-                </p>
-            </div>
-            <div class="hidden-content" id="dem">
-                <p>
-                    A digital elevation model, or DEM is a raster representation of the earth’s 
+                        </p>
+                    </div>
+                    <div class="hidden-content" id="dem">
+                        <p>
+                            A digital elevation model, or DEM is a raster representation of the earth’s 
                     surface created from LiDAR elevation data. The most common type of DEM is a 
                     bare earth DEM in which  many objects like trees and buildings have been removed. 
                     DEMs are utilized for a variety of purposes including hydrology modeling, viewshed 
                     analysis, and line of sight analysis.  DEMs are also the first step in creating 
                     many other important derivative products such as slope, aspect, and hillshade.
-                </p>
-            </div>
-            <div class="hidden-content" id="colorStretched">
-                <p>
-                    Color stretched visualizations offer a more dynamic and traditional view of 
+                        </p>
+                    </div>
+                    <div class="hidden-content" id="colorStretched">
+                        <p>
+                            Color stretched visualizations offer a more dynamic and traditional view of 
                     the DEMs by applying a color ramp to the elevation values.
-                </p>
-            </div>
-            <div class="hidden-content" id="slope">
-                <p>
-                    Slope identifies the inclination of the earth’s surface.  
+                        </p>
+                    </div>
+                    <div class="hidden-content" id="slope">
+                        <p>
+                            Slope identifies the inclination of the earth’s surface.  
                     The degree or percent of a slope is an important factor when analyzing slope stability, 
                     transportation, agriculture, recreation,etc.  Slope can be used alone or in conjunction 
                     with other layers for various site suitability analysis.
-                </p>
-            </div>
-            <div class="hidden-content" id="aspect">
-                <p>
-                    Aspect identifies slope direction in compass degrees where 0=north and 180=south.  
+                        </p>
+                    </div>
+                    <div class="hidden-content" id="aspect">
+                        <p>
+                            Aspect identifies slope direction in compass degrees where 0=north and 180=south.  
                     Aspect determines how much sunlight will strike the earth’s surface and therefore has 
                     important impacts on ecology, animal and vegetative habitats soil moisture, and many other 
                     biological and physical landscape characteristics.  It is also essential in many alternative 
                     energy project when considering site location of wind or solar facilities.
-                </p>
-            </div>
-            <div class="hidden-content" id="hillshade">
-                <p>
-                    Hillshade is used to determine the illumination of the earth’s surface.  
+                        </p>
+                    </div>
+                    <div class="hidden-content" id="hillshade">
+                        <p>
+                            Hillshade is used to determine the illumination of the earth’s surface.  
                     It can be used in analysis to understand the time and intensity of the sun at a given 
                     location or for graphical display purposes to enhance the relief of a surface.  
-                </p>
+                        </p>
+                    </div>
+                </div>
             </div>
+
         </div>
+        <div class=""></div>
+
     </div>
-    <div class="row">
-        <div class="col-sm-12">
-            <h4>Status map <small>
-                <a href="http://maryland.maps.arcgis.com/home/webmap/viewer.html?webmap=f02c54adaf0548c99a5c479c918ac45d&amp;extent=-80.7182,36.8443,-74.1044,40.4844"
-                    target="_blank">(View Larger Map)</a>
-            </small></h4>
-            <iframe id="metadataMap"
-                src="http://maryland.maps.arcgis.com/home/webmap/templates/OnePane/basicviewer/embed.html?webmap=f02c54adaf0548c99a5c479c918ac45d&amp;gcsextent=-80.0315,36.8311,-76.5324,40.4969&amp;displayslider=true&amp;displaylegend=true&amp;displaydetails=true"></iframe>
-            <br />
-            
-        </div>
-    </div>
+
     <div class="row">
         <div class="col-sm-12">
             <h4>Countywide Services</h4>
@@ -402,8 +428,19 @@
         </div>
     </div>
     <div class="row">
+        <div class="col-md-12">
+            <a href="#top"><i class="fa fa-arrow-circle-o-up"></i>&nbsp;<small>Back to top</small></a>
+        </div>
+    </div>
+    <div class="row" id="fqa">
         <div class="col-sm-12">
-            <h4>Frequently Asked Questions</h4>
+            <h4>Frequently Asked Questions 
+                <span id="fqaToggle">
+                    <a href="#" data-toggle="expand"><small><i class="fa fa-plus-square-o"></i>&nbsp;Expand all</small></a>
+                    <a href="#" data-toggle="collapse" class="hidden-content"><small><i class="fa fa-minus-square-o"></i>&nbsp;Collapse
+                        all</small></a>
+                </span>
+            </h4>
             <div>
                 <div class="panel-group" id="accordion">
                     <div class="panel panel-default">
@@ -432,7 +469,8 @@
                                         uses water-penetrating green light and higher intensity pulses to also measure 
                                         seafloor and riverbed elevations. 
                                     </div>
-                                    <small><cite><a target="_blank" href="http://oceanservice.noaa.gov/facts/lidar.html">What Is LIDAR? National Oceanic and Atmospheric Administration, 22 Jan. 2013.</a>.</cite></small>
+                                    <small><cite><a target="_blank" href="http://oceanservice.noaa.gov/facts/lidar.html">What Is LIDAR? National
+                                        Oceanic and Atmospheric Administration, 22 Jan. 2013.</a>.</cite></small>
                                 </blockquote>
                             </div>
                         </div>
@@ -451,7 +489,7 @@
                                         Elevation data are essential to a broad range of applications, including forest 
                                         resources management, wildlife and habitat management, national security, recreation, 
                                         and many others. For the State of Maryland, elevation data are critical for agriculture 
-                                        and precision farming, natural resources conservation such as the Chesapeake Bay and its watershed, 
+                                        and precision farming, natural resources conservation such as the Chesapeake Bay and its watershed,
                                         flood risk management, urban and regional planning, infrastructure and construction management, 
                                         water supply and quality, coastal zone management, and other business uses. Today, high-density 
                                         light detection and ranging (LiDAR) data are the primary sources for deriving elevation models, 
@@ -591,7 +629,8 @@
                                     <li>Select Use GIS Services and click Next.</li>
                                     <li>The Server URL is: http://esrgc2.salisbury.edu/arcgis</li>
                                     <li>Click Finish (an alert may pop up notifying that the connection was made successfully).</li>
-                                    <li>The new server connection will appear in the ArcCatalog window. After expanding the server, select the desired Image Service.</li>
+                                    <li>The new server connection will appear in the ArcCatalog window. After expanding the server, select the
+                                        desired Image Service.</li>
                                 </ol>
                                 <strong><small>* Viewing Tip</small></strong><br />
                                 <ul>
@@ -600,12 +639,13 @@
                                         Raster functions have been added to all of the countywide dem_m image services.
                                     </li>
                                     <li>
-                                        <span>To apply:</span><br />
+                                        <span>To apply:</span>
                                         <ul>
                                             <li>Add in the countywide dem_m service</li>
                                             <li>Right click the service in the table of contents > Properties > Server Functions</li>
                                             <li>Select the Functions drop-down</li>
-                                            <li>Choose one from the following function: Aspect, DEM_FT, Hillshade, None, Slope, Stretched. > Apply > Ok.</li>
+                                            <li>Choose one from the following function: Aspect, DEM_FT, Hillshade, None, Slope, Stretched. > Apply >
+                                                Ok.</li>
                                             <li>If choosing DEM_FT, an additional step is necessary.
                                                 <br />
                                                 <ul>
@@ -620,7 +660,8 @@
                                 <ol>
                                     <li>Select Layer > Add WMS Layer > Select New.</li>
                                     <li>Name the connection.</li>
-                                    <li>Navigate to the service WMS page from the REST services directory and copy/paste the link into the URL field.</li>
+                                    <li>Navigate to the service WMS page from the REST services directory and copy/paste the link into the URL
+                                        field.</li>
                                     <li>*These services do not require a username and password.</li>
                                     <li>Select Ok.</li>
                                     <li>Select the service in the list of layers > Select Add > Close.</li>
@@ -645,7 +686,8 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">How to extract the data for use in desktop processing</a>
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">How to extract the data for use
+                                    in desktop processing</a>
                             </h4>
                         </div>
                         <div id="collapseFive" class="panel-collapse collapse">
@@ -656,7 +698,8 @@
                                     <li>Load the service and feature mask into ArcMap</li>
                                     <li>In ArcToolbox, select the Extract by Mask tool under Spatial Analyst toolbox</li>
                                     <li>Select the image service as the input raster and the boundary feature class as the feature mask</li>
-                                    <li>Specify the output raster name and directory location where the image will be saved and select OK.</li>
+                                    <li>Specify the output raster name and directory location where the image will be saved and select OK.
+                                    </li>
                                     <li>The image will be added to the map after processing.</li>
                                 </ol>
                                 <span>If you do not have the Spatial Analyst extension use the Export by data frame extent.</span>
@@ -673,7 +716,8 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix">Where can I find the metadata for these services?</a>
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix">Where can I find the metadata for
+                                    these services?</a>
                             </h4>
                         </div>
                         <div id="collapseSix" class="panel-collapse collapse">
@@ -722,7 +766,8 @@
                                     They are most appropriate for background display, location queries for spot elevations,
                                      and extraction of small areas (less than 25 sq miles). Your ability to utilize the services 
                                     will depend on both the download speed of your Internet connection and the number of concurrent 
-                                    users on our servers. If extracting data, please expect the process to take longer than you may be used to.
+                                    users on our servers. If extracting data, please expect the process to take longer than you may be used
+                                    to.
                                 </p>
                             </div>
                         </div>
@@ -730,7 +775,8 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseEight">What if I need to examine a large area?</a>
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseEight">What if I need to examine a large
+                                    area?</a>
                             </h4>
                         </div>
                         <div id="collapseEight" class="panel-collapse collapse">
@@ -772,6 +818,11 @@
                 </div>
 
             </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <a href="#top"><i class="fa fa-arrow-circle-o-up"></i>&nbsp;<small>Back to top</small></a>
         </div>
     </div>
 </div>

@@ -196,7 +196,7 @@ h6 {
 }
 #metadataMap {
   width: 100%;
-  height: 500px;
+  height: 400px;
   overflow: hidden;
   border: none;
   margin: 0;
@@ -204,8 +204,12 @@ h6 {
 #viewer {
   float: left;
 }
-#elevationMap > img {
-  max-width: 80%;
+#elevationMap img {
+  width: 80%;
+  max-width: 400px;
+}
+.footer {
+  text-align: center;
 }
 .topography-image {
   margin: 0 20px 20px 0;
