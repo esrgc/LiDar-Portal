@@ -1,5 +1,5 @@
 ﻿@{
-    Page.Title = "MD iMap LiDAR Library";
+    Page.Title = "MD iMap Elevation Library";
     Layout = "_SiteLayout.cshtml";
 }
 @section scripts {
@@ -44,7 +44,7 @@
     </script>
 }
 @{
-    var fullServiceList = "http://esrgc2.salisbury.edu/arcgis/rest/services/Elevation";
+    var fullServiceList = "http://lidar.salisbury.edu/arcgis/rest/services/Elevation";
     var topoViewer = "http://apps.esrgc.org/maps/md-lidar-viewer/ ";
 }
 <div class="container">
@@ -76,8 +76,8 @@
             <div class="clear"></div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12">
+    @*<div class="row">
+        <div class="col-sm-9">
             <h4>Maryland Lidar Status Map</h4>
             <div id="elevationMap">
                 <a href="http://bit.ly/K6MSFA" target="_blank">
@@ -86,7 +86,7 @@
             </div>
             <small><i>Click the thumbnail to view the Lidar Status Map in ArcGIS online</i></small>
         </div>
-    </div>
+    </div>*@
     <div class="row">
         <div class="col-sm-9">
             @*<h4>Maryland LiDAR Server</h4>*@
@@ -98,6 +98,14 @@
                 </small>
             </p>
             <div class="inline-container">
+                <div class="placeholder-panel topography-image" data-target="#general">
+                    <a href="http://bit.ly/K6MSFA" target="_blank">
+                        <div class="back-drop">
+                            <h4>Status map</h4>
+                        </div>
+                        <img src="~/client/images/acquisition_overlay.jpg" alt=""/>
+                    </a>
+                </div>
                 <div class="placeholder-panel topography-image" data-target="#dem">
 
                     <a target="_blank" href="http://bit.ly/K6NkUq">
@@ -627,14 +635,17 @@
                                     <li>In the ArcCatalog window expand GIS Servers.</li>
                                     <li>Select Add ArcGIS Server.</li>
                                     <li>Select Use GIS Services and click Next.</li>
-                                    <li>The Server URL is: http://esrgc2.salisbury.edu/arcgis</li>
+                                    <li>The Server URL is: http://lidar.salisbury.edu/arcgis</li>
                                     <li>Click Finish (an alert may pop up notifying that the connection was made successfully).</li>
-                                    <li>The new server connection will appear in the ArcCatalog window. After expanding the server, select the
-                                        desired Image Service.</li>
+                                    <li>
+                                        The new server connection will appear in the ArcCatalog window. After expanding the server, select the
+                                        desired Image Service.
+                                    </li>
                                 </ol>
                                 <strong><small>* Viewing Tip</small></strong><br />
                                 <ul>
-                                    <li>ArcGIS Desktop enables the use of raster functions. 
+                                    <li>
+                                        ArcGIS Desktop enables the use of raster functions. 
                                         Functions provide users with fast on-the-fly processing options without changing the actual data.
                                         Raster functions have been added to all of the countywide dem_m image services.
                                     </li>
@@ -644,9 +655,12 @@
                                             <li>Add in the countywide dem_m service</li>
                                             <li>Right click the service in the table of contents > Properties > Server Functions</li>
                                             <li>Select the Functions drop-down</li>
-                                            <li>Choose one from the following function: Aspect, DEM_FT, Hillshade, None, Slope, Stretched. > Apply >
-                                                Ok.</li>
-                                            <li>If choosing DEM_FT, an additional step is necessary.
+                                            <li>
+                                                Choose one from the following function: Aspect, DEM_FT, Hillshade, None, Slope, Stretched. > Apply >
+                                                Ok.
+                                            </li>
+                                            <li>
+                                                If choosing DEM_FT, an additional step is necessary.
                                                 <br />
                                                 <ul>
                                                     <li>Select Symbology > Scroll down to Statistics > Select From Current Display > Apply > Ok.</li>
@@ -660,8 +674,10 @@
                                 <ol>
                                     <li>Select Layer > Add WMS Layer > Select New.</li>
                                     <li>Name the connection.</li>
-                                    <li>Navigate to the service WMS page from the REST services directory and copy/paste the link into the URL
-                                        field.</li>
+                                    <li>
+                                        Navigate to the service WMS page from the REST services directory and copy/paste the link into the URL
+                                        field.
+                                    </li>
                                     <li>*These services do not require a username and password.</li>
                                     <li>Select Ok.</li>
                                     <li>Select the service in the list of layers > Select Add > Close.</li>
@@ -677,9 +693,59 @@
                                     <li>Double click the service once it appears under the “Places” tab to zoom to the service extent.</li>
                                 </ol>
                                 <i>AutoCAD</i>
-                                <p>To be available</p>
+                                <ol>
+                                    <li>Start AutoCAD</li>
+                                    <li>Click the Add Image Server Connection  on the Image Server toolbar.</li>
+                                    <li>The Add Image Server Connection dialog box is displayed.</li>
+                                    <li>
+                                        In the Server Name text box, type the name of the Lidar server:  http://lidar.salisbury.edu/arcgis.
+                                    </li>
+                                    <li>Double -click the Elevation folder to view the contained services.</li>
+                                    <li>
+                                        Double-click the image service in the list, or click the image service and click Select to
+                                        to add the image service to the Selected Services list.
+                                    </li>
+                                    <li>
+                                        The Service Properties dialog box is displayed. This dialog box shows the image service metadata and
+                                        properties that you can view before opening the image service.
+                                    </li>
+                                    <li>
+                                        Click OK to close the Add Image Server Connection dialog box.                                        
+                                    </li>
+                                </ol>
+                                <p>
+                                    <small>Instructions provided by ESRI resources:
+                                        <a target="_blank" href="http://resources.esri.com/help/9.3/ArcGISImageServer/AutoCAD/HTML/index.htm#adding_an_image_service_in_autocad.htm">
+                                            http://resources.esri.com/help/9.3/ArcGISImageServer/AutoCAD/HTML/index.htm#adding_an_image_service_in_autocad.htm
+                                        </a>
+                                    </small>
+                                </p>
                                 <i>Microstation</i>
-                                <p>To be available</p>
+                                <ol>
+                                    <li>Start MicroStation.</li>
+                                    <li>Click the Add Server Connection button  in the MicroStation Image Server Client dialog box.</li>
+                                    <li>The Add Image Server Connection dialog box is displayed.</li>
+                                    <li>
+                                        In the Server Name text box, type the name of the Lidar server:  http://lidar.salisbury.edu/arcgis.
+                                    </li>
+                                    <li>Double -click the Elevation folder to view the contained services.</li>
+                                    <li>
+                                        Double-click the image service in the list, or click the image service and click Select to add the image
+                                        service to the Selected Services list.
+                                    </li>
+                                    <li>
+                                        The Service Properties dialog box is displayed. This dialog box shows the image service metadata and
+                                        properties that you can view before opening the image service.
+                                    </li>
+                                    <li>Click OK to close the Add Image Server Connection dialog box.</li>
+                                </ol>
+                                <p>
+                                    <small>Instructions provided by ESRI resources:
+                                        <a target="_blank" href="http://resources.esri.com/help/9.3/ArcGISImageServer/AutoCAD/HTML/index.htm#adding_an_image_service_in_autocad.htm">
+                                            http://resources.esri.com/help/9.3/ArcGISImageServer/AutoCAD/HTML/index.htm#adding_an_image_service_in_autocad.htm
+                                        </a>
+                                    </small>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -698,7 +764,8 @@
                                     <li>Load the service and feature mask into ArcMap</li>
                                     <li>In ArcToolbox, select the Extract by Mask tool under Spatial Analyst toolbox</li>
                                     <li>Select the image service as the input raster and the boundary feature class as the feature mask</li>
-                                    <li>Specify the output raster name and directory location where the image will be saved and select OK.
+                                    <li>
+                                        Specify the output raster name and directory location where the image will be saved and select OK.
                                     </li>
                                     <li>The image will be added to the map after processing.</li>
                                 </ol>
@@ -798,16 +865,20 @@
                         <div id="collapseNine" class="panel-collapse collapse">
                             <div class="panel-body">
                                 <ul>
-                                    <li>Maryland Department of Natural Resources: 
+                                    <li>
+                                        Maryland Department of Natural Resources: 
                                         <a target="_blank" href="http://www.dnr.state.md.us/gis/">http://www.dnr.state.md.us/gis/</a>
                                     </li>
-                                    <li>NOAA Digital Coast, United States Interagency Elevation Inventory - 
+                                    <li>
+                                        NOAA Digital Coast, United States Interagency Elevation Inventory - 
                                         <a target="_blank" href="http://www.csc.noaa.gov/inventory">http://www.csc.noaa.gov/inventory</a>
                                     </li>
-                                    <li>UGSG National Map Viewer - 
+                                    <li>
+                                        UGSG National Map Viewer - 
                                         <a target="_blank" href="http://viewer.nationalmap.gov/viewer">http://viewer.nationalmap.gov/viewer</a>
                                     </li>
-                                    <li>UGSG Earth Explorer - 
+                                    <li>
+                                        UGSG Earth Explorer - 
                                         <a target="_blank" href="http://earthexplorer.usgs.gov">http://earthexplorer.usgs.gov</a>
                                     </li>
                                 </ul>
