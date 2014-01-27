@@ -1,0 +1,411 @@
+<metadata>
+	<idinfo>
+		<citation>
+			<citeinfo>
+				<origin>KCI/Sanborn Joint Venture Partnership, L.L.C. (hereafter referred to as KCI/Sanborn)</origin>
+				<pubdate>20081030</pubdate>
+				<title>Baltimore_City_ESRI_Grid_Binary</title>
+				<geoform>raster digital data</geoform>
+				<onlink>\\Cos-svr-60\vol2\8095_BALTIMORE\PRODUCTS\MD_SPCS_NAD83_NAVD88_USft\Arc_Grids\balt_1n-1w</onlink>
+			</citeinfo>
+		</citation>
+		<descript>
+			<abstract>Provide high density LiDAR elevation data of Baltimore City, MD. Provide Bare Earth DEM (above ground features removed) of Baltimore City, MD.</abstract>
+			<purpose>This LIDAR project was designed to provide a high density set of masspoints within the defined areas. The data sets are suitable for the development of contours for use in hydraulic/hydrologic model development, and for assessing environmental impacts.Typical uses for the data set include: FEMA Flood Plain Map Modernization. DFIRM map updates, watersheds and other hydro studies per FEMA specifications, City Mapping projects which including Flood mitigation assessment, mapping projects that include accuracy verification, reporting and meta data.</purpose>
+			<langdata>en</langdata></descript>
+		<timeperd>
+			<timeinfo>
+				<sngdate>
+					<caldate>20080415</caldate>
+				</sngdate>
+			</timeinfo>
+			<current>ground condition</current>
+		</timeperd>
+		<status>
+			<progress>Complete</progress>
+			<update>None planned</update>
+		</status>
+		<spdom>
+			<bounding>
+				<westbc>-76.712095</westbc>
+				<eastbc>-76.528950</eastbc>
+				<northbc>39.372558</northbc>
+				<southbc>39.197157</southbc>
+			</bounding>
+		</spdom>
+		<keywords>
+			<theme>
+				<themekt>MD</themekt>
+				<themekey>DEM</themekey>
+				<themekey>Digital elevation model</themekey>
+				<themekey>Elevation</themekey>
+				<themekey>Digital terrain model</themekey>
+				<themekey>Surface Model</themekey>
+				<themekey>Hydraulic</themekey>
+				<themekey>Hydrographic</themekey>
+				<themekey>Lidar</themekey>
+				<themekey>LIDAR</themekey>
+				<themekey>Hydrologic Modeling</themekey>
+				<themekey>Drainage Area</themekey>
+				<themekey>Hydrology</themekey>
+				<themekey>ASCII Grid</themekey>
+				<themekey>Binary Grid</themekey>
+				<themekey>ESRI Grid</themekey>
+			</theme>
+			<place>
+				<placekey>Baltimore</placekey>
+				<placekey>MD</placekey>
+			</place>
+		</keywords>
+		<accconst>None</accconst>
+		<useconst>Any conclusions drawn from analysis of this information are not the responsibility of Sanborn Map Company. Users should be aware that temporal changes may have occurred since this dataset was collected and some parts of this dataset may no longer represent actual surface conditions. Users should not use these data for critical applications without a full awareness of its limitations.</useconst>
+		<ptcontac>
+			<cntinfo>
+				<cntorgp>
+					<cntorg>KCI/Sanborn Joint Venture Partnership, L.L.C. (hereafter referred to as KCI/Sanborn)</cntorg>
+					<cntper>Josh Nimetz</cntper>
+				</cntorgp>
+				<cntpos>LiDAR Production Manager</cntpos>
+				<cntaddr>
+					<addrtype>mailing and physical address</addrtype>
+					<address>1935 Jamboree Dr. Suite 100</address>
+					<city>Colorado Springs</city>
+					<state>Colorado</state>
+					<postal>80920</postal>
+					<country>United States</country>
+				</cntaddr>
+				<cntvoice>719.264.5513</cntvoice>
+				<cnttdd>N/A</cnttdd>
+				<cntfax>719.264.5631</cntfax>
+				<cntemail>jnimetz@sanborn.com</cntemail>
+				<hours>8:00 AM - 5:00 PM MST</hours>
+			</cntinfo>
+		</ptcontac>
+		<secinfo>
+			<secclass>Unclassified</secclass>
+		</secinfo>
+		<native>Microsoft Windows XP Version 5.1 (Build 2600) Service Pack 3; ESRI ArcCatalog 9.2.4.1420</native>
+		<natvform>ESRI_Grid_Binary</natvform></idinfo>
+	<dataqual>
+		<logic>None</logic>
+		<complete>None</complete>
+		<posacc>
+			<horizpa>
+				<horizpar>Federal Emergency Management Administration (FEMA) LiDAR Specifications</horizpar>
+			</horizpa>
+			<vertacc>
+				<vertaccr>Federal Emergency Management Administration (FEMA) LiDAR Specifications; 18.5 cm RMSE</vertaccr>
+			</vertacc>
+		</posacc>
+		<lineage>
+			<procstep>
+				<procdesc>Data Collection:
+Using a Leica Geosystems ALS50 Light Detection And Ranging (LiDAR) system, 29 flight lines of an average density of 1.0 meter ground sample distance, data were collected over areas in Baltimore City, MD (approximately 90 square miles).  Multiple returns were recorded for each laser pulse along with an intensity value for each return.  The data acquisition occurred in 1 mission on April 15, 2008.  During the LIDAR campaign, the Sanborn field crew conducted a GPS field survey to establish final coordinates of the ground base stations for final processing of the base-remote GPS solutions.</procdesc>
+				<procdate>20080415</procdate>
+				<proccont>
+					<cntinfo>
+						<cntorgp>
+							<cntorg>Sanborn Map Company, Inc.</cntorg>
+							<cntper>Josh Nimetz</cntper>
+						</cntorgp>
+						<cntpos>LiDAR Production Manager</cntpos>
+						<cntaddr>
+							<addrtype>mailing and physical address</addrtype>
+							<address>1935 Jamboree Dr. Suite 100</address>
+							<city>Colorado Springs</city>
+							<state>Colorado</state>
+							<postal>80920</postal>
+							<country>United States</country>
+						</cntaddr>
+						<cntvoice>719.264.5513</cntvoice>
+						<cnttdd>N/A</cnttdd>
+						<cntfax>719.264.5631</cntfax>
+						<cntemail>jnimetz@sanborn.com</cntemail>
+						<hours>8:00 AM - 5:00 PM MST</hours>
+					</cntinfo>
+				</proccont>
+			</procstep>
+			<procstep>
+				<procdesc>Airborne GPS Processing:
+Airborne GPS data was differentially processed and integrated with the post processed IMU data to derive a Smoothed Best Estimate of Trajectory (SBET).  The SBET was used to reduce the LiDAR slant range measurements to a raw reflective surface for each flight line.  The overlap between flight lines was removed to provide a homogeneous coverage, and the coverage was classified to extract a bare earth digital elevation model (DEM).
+
+Airborne GPS is differentially processed using the GrafNAV V7.50 software by Waypoint Consulting of Calgary, Alberta, Canada.  The PDOP and distance separation is as follows:
+
+The classification and quality control (QC) of LiDAR data is carried out using  TerraScan software by Terrasolid Limited of Helinski, Finland.</procdesc>
+				<procdate>2008</procdate>
+				<proccont>
+					<cntinfo>
+						<cntorgp>
+							<cntorg>Sanborn Map Company, Inc.</cntorg>
+							<cntper>Josh Nimetz</cntper>
+						</cntorgp>
+						<cntpos>LiDAR Production Manager</cntpos>
+						<cntaddr>
+							<addrtype>mailing and physical address</addrtype>
+							<address>1935 Jamboree Dr. Suite 100</address>
+							<city>Colorado Springs</city>
+							<state>Colorado</state>
+							<postal>80920</postal>
+							<country>United States</country>
+						</cntaddr>
+						<cntvoice>719.264.5513</cntvoice>
+						<cnttdd>N/A</cnttdd>
+						<cntfax>719.264.5631</cntfax>
+						<cntemail>jnimetz@sanborn.com</cntemail>
+						<hours>8:00 AM - 5:00 PM MST</hours>
+					</cntinfo>
+				</proccont>
+			</procstep>
+			<procstep>
+				<procdesc>IMU data Processing:
+IMU data provides information concerning roll, pitch and yaw of collection platform during collection event.  IMU information allows the pulse vector to be properly placed in 3D space allowing the distance from the aircraft reference point to be properly positioned on the elevation model surface. The IMU data is processed using the PosPac V4.2 software by Applanix Corporation of Richmond Hill, Ontario, Canada.
+
+The reflective surface is derived using the ALS Post Processor software by Leica Geosystems GIS &amp; Mapping Division of Atlanta, Georgia.</procdesc>
+				<procdate>2008</procdate>
+				<proccont>
+					<cntinfo>
+						<cntorgp>
+							<cntorg>Sanborn Map Company, Inc.</cntorg>
+							<cntper>Josh Nimetz</cntper>
+						</cntorgp>
+						<cntpos>LiDAR Production Manager</cntpos>
+						<cntaddr>
+							<addrtype>mailing and physical address</addrtype>
+							<address>1935 Jamboree Dr. Suite 100</address>
+							<city>Colorado Springs</city>
+							<state>Colorado</state>
+							<postal>80920</postal>
+							<country>United States</country>
+						</cntaddr>
+						<cntvoice>719.264.5513</cntvoice>
+						<cnttdd>N/A</cnttdd>
+						<cntfax>719.264.5631</cntfax>
+						<cntemail>jnimetz@sanborn.com</cntemail>
+						<hours>8:00 AM - 5:00 PM MST</hours>
+					</cntinfo>
+				</proccont>
+			</procstep>
+			<procstep>
+				<procdesc>Reflective Surface Generation:
+The reflective surface is derived using the ALS Post Processor software by Leica Geosystems GIS &amp; Mapping Division of Atlanta, Georgia.</procdesc>
+				<procdate>2008</procdate>
+				<proccont>
+					<cntinfo>
+						<cntorgp>
+							<cntorg>Sanborn Map Company, Inc.</cntorg>
+							<cntper>Josh Nimetz</cntper>
+						</cntorgp>
+						<cntpos>LiDAR Production Manager</cntpos>
+						<cntaddr>
+							<addrtype>mailing and physical address</addrtype>
+							<address>1935 Jamboree Dr. Suite 100</address>
+							<city>Colorado Springs</city>
+							<state>Colorado</state>
+							<postal>80920</postal>
+							<country>United States</country>
+						</cntaddr>
+						<cntvoice>719.264.5513</cntvoice>
+						<cnttdd>N/A</cnttdd>
+						<cntfax>719.264.5631</cntfax>
+						<cntemail>jnimetz@sanborn.com</cntemail>
+						<hours>8:00 AM - 5:00 PM MST</hours>
+					</cntinfo>
+				</proccont>
+			</procstep>
+			<procstep>
+				<procdesc>LIDAR Point Classification
+The classification and quality control (QC) of LiDAR data is carried out using  TerraScan software by Terrasolid Limited of Helinski, Finland.</procdesc>
+				<procdate>2008</procdate>
+				<proccont>
+					<cntinfo>
+						<cntorgp>
+							<cntorg>Sanborn Map Company, Inc.</cntorg>
+							<cntper>Josh Nimetz</cntper>
+						</cntorgp>
+						<cntpos>LiDAR Production Manager</cntpos>
+						<cntaddr>
+							<addrtype>mailing and physical address</addrtype>
+							<address>1935 Jamboree Dr. Suite 100</address>
+							<city>Colorado Springs</city>
+							<state>Colorado</state>
+							<postal>80920</postal>
+							<country>United States</country>
+						</cntaddr>
+						<cntvoice>719.264.5513</cntvoice>
+						<cnttdd>N/A</cnttdd>
+						<cntfax>719.264.5631</cntfax>
+						<cntemail>jnimetz@sanborn.com</cntemail>
+						<hours>8:00 AM - 5:00 PM MST</hours>
+					</cntinfo>
+				</proccont>
+			</procstep>
+			<procstep>
+				<procdesc>Generation of ESRI Grid dataset:
+ASCII Grids were output from TerraScan using the Bare Earth (Ground only) classification and converted to ESRI Grids (Binary Grids) using ArcGIS software.</procdesc>
+				<procdate>2008</procdate>
+				<proccont>
+					<cntinfo>
+						<cntorgp>
+							<cntorg>Sanborn Map Company, Inc.</cntorg>
+							<cntper>Josh Nimetz</cntper>
+						</cntorgp>
+						<cntpos>LiDAR Production Manager</cntpos>
+						<cntaddr>
+							<addrtype>mailing and physical address</addrtype>
+							<address>1935 Jamboree Dr. Suite 100</address>
+							<city>Colorado Springs</city>
+							<state>Colorado</state>
+							<postal>80920</postal>
+							<country>United States</country>
+						</cntaddr>
+						<cntvoice>719.264.5513</cntvoice>
+						<cnttdd>N/A</cnttdd>
+						<cntfax>719.264.5631</cntfax>
+						<cntemail>jnimetz@sanborn.com</cntemail>
+						<hours>8:00 AM - 5:00 PM MST</hours>
+					</cntinfo>
+				</proccont>
+			</procstep>
+			<procstep>
+				<procdesc>Metadata imported.</procdesc>
+				<srcused>C:\DOCUME~1\sjones\LOCALS~1\Temp\xml3C.tmp</srcused>
+			</procstep>
+		</lineage>
+	</dataqual>
+	<spdoinfo>
+		<direct>Point</direct>
+		<ptvctinf>
+			<sdtsterm>
+				<sdtstype>Point</sdtstype>
+				<ptvctcnt>1</ptvctcnt>
+			</sdtsterm>
+		</ptvctinf>
+	</spdoinfo>
+	<spref>
+		<horizsys>
+			<planar>
+				<mapproj>
+					<mapprojn>Lambert Conformal Conic</mapprojn>
+					<lambertc>
+						<stdparll>38.300000</stdparll>
+						<stdparll>39.450000</stdparll>
+						<longcm>-77.000000</longcm>
+						<latprjo>37.666667</latprjo>
+						<feast>1312333.333333</feast>
+						<fnorth>0.000000</fnorth>
+					</lambertc>
+				</mapproj>
+				<planci>
+					<plance>coordinate pair</plance>
+					<coordrep>
+						<absres>3.280000</absres>
+						<ordres>3.280000</ordres>
+					</coordrep>
+					<plandu>survey feet</plandu>
+				</planci>
+			</planar>
+			<geodetic>
+				<horizdn>North American Datum of 1983</horizdn>
+				<ellips>Geodetic Reference System 80</ellips>
+				<semiaxis>6378137.000000</semiaxis>
+				<denflat>298.257222</denflat>
+			</geodetic>
+			<cordsysn><geogcsn>GCS_North_American_1983</geogcsn><projcsn>NAD_1983_StatePlane_Maryland_FIPS_1900_Feet</projcsn></cordsysn></horizsys>
+		<vertdef>
+			<altsys>
+				<altdatum>North American Vertical Datum of 1988</altdatum>
+				<altunits>feet</altunits>
+				<altenc>Explicit elevation coordinate included with horizontal coordinates</altenc>
+			</altsys>
+		</vertdef>
+	</spref>
+	<eainfo>
+		<detailed>
+			<enttyp>
+				<enttypl>
+Baltimore City</enttypl>
+			</enttyp>
+			<attr>
+				<attrlabl>NAME</attrlabl>
+			</attr>
+		</detailed>
+		<overview>
+		</overview>
+	</eainfo>
+	<distinfo>
+		<distrib>
+			<cntinfo>
+				<cntperp>
+					<cntper>Josh Nimetz</cntper>
+					<cntorg>Sanborn Map Company, Inc.</cntorg>
+				</cntperp>
+				<cntpos>LiDAR Production Manager</cntpos>
+				<cntaddr>
+					<addrtype>mailing and physical address</addrtype>
+					<address>1935 Jamboree Dr. Suite 100</address>
+					<city>Colorado Springs</city>
+					<state>Colorado</state>
+					<postal>80920</postal>
+					<country>United States</country>
+				</cntaddr>
+				<cntvoice>719.264.5513</cntvoice>
+				<cnttdd>N/A</cnttdd>
+				<cntfax>719.264.5631</cntfax>
+				<cntemail>jnimetz@sanborn.com</cntemail>
+				<hours>8:00 AM - 5:00 PM MST</hours>
+			</cntinfo>
+		</distrib>
+		<resdesc>Data are organized by tile and are available through several distribution methods.</resdesc>
+		<distliab>KCI/Sanborn does not warrant these data for any particular use and is not responsible for any damages resulting from the use of the data.  Contact KCI/Sanborn for more details.  Acknowledgement of KCI/Sanborn appreciated in products derived and used from the data. The originator asks to be credited in derived products.</distliab>
+		<stdorder>
+			<digform>
+				<digtinfo>
+					<transize>12.665</transize>
+				</digtinfo>
+			</digform>
+		</stdorder>
+		<availabl>
+			<timeinfo>
+				<sngdate>
+					<caldate>200830</caldate>
+				</sngdate>
+			</timeinfo>
+		</availabl>
+	</distinfo>
+	<metainfo>
+		<metd>20081030</metd>
+		<metc>
+			<cntinfo>
+				<cntperp>
+					<cntper>Josh Nimetz</cntper>
+					<cntorg>Sanborn Map Company, Inc.</cntorg>
+				</cntperp>
+				<cntpos>LiDAR Production Manager</cntpos>
+				<cntaddr>
+					<addrtype>mailing and physical address</addrtype>
+					<address>1935 Jamboree Dr. Suite 100</address>
+					<city>Colorado Springs</city>
+					<state>Colorado</state>
+					<postal>80920</postal>
+					<country>United States</country>
+				</cntaddr>
+				<cntvoice>719-264-5513</cntvoice>
+				<cnttdd>N/A</cnttdd>
+				<cntfax>719-264-5631</cntfax>
+				<cntemail>jnimetz@sanborn.com</cntemail>
+				<hours>8:00 AM - 5:00 PM MST</hours>
+			</cntinfo>
+		</metc>
+		<metstdn>FGDC Content Standards for Digital Geospatial Metadata</metstdn>
+		<metstdv>FGDC-STD-001-1998</metstdv>
+		<mettc>local time</mettc>
+		<metextns>
+			<onlink>http://www.esri.com/metadata/esriprof80.html</onlink>
+			<metprof>ESRI Metadata Profile</metprof>
+		</metextns>
+		<metextns>
+			<onlink>http://www.esri.com/metadata/esriprof80.html</onlink>
+			<metprof>ESRI Metadata Profile</metprof>
+		</metextns>
+	</metainfo>
+	<Esri><ModDate>20081030</ModDate><ModTime>10564500</ModTime></Esri><mdDateSt Sync="TRUE">20081030</mdDateSt></metadata>

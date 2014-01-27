@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ESRGC - @Page.Title</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="~/client/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/client/lib/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/client/css/less/site.css" rel="stylesheet" />
+    <link href="~/client/css/stickyFooter.css" rel="stylesheet" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <script src="~/client/js/jquery-1.8.2.min.js"></script>
+    <script src="~/client/js/modernizr-2.6.2.js"></script>
+    <script src="~/client/lib/bootstrap/js/bootstrap.min.js"></script>
+    <link href="~/client/lib/font-awesome-4.0.3/css/font-awesome.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="wrapper">
+        <div class="page-content">
+            <div class="container">
+                <header class="page-header">
+                    <h3>@Page.Title</h3>
+                </header>
+            </div>
+            @RenderBody()
+        </div>
+        <div class="push"></div>
+    </div>
+    <div class="container">
+        <footer class="footer">
+            <div>
+                <a href="http://esrgc.org"><img src="~/client/images/esrgc.png" alt="" /></a>
+            </div>
+        </footer>
+    </div>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
