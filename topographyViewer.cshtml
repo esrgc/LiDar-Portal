@@ -1,0 +1,37 @@
+﻿@{
+    Page.Title = "Maryland Topography Viewer";
+    Layout = "_SiteLayout.cshtml";
+}
+@{
+    var topoViewer = "http://apps.esrgc.org/maps/md-lidar-viewer/ ";
+}
+<div class="container">
+    <div class="row" id="top">
+        <div class="col-sm-12">
+            <div class="inline-container">
+                <div class="transparent-placeholder" id="viewer">
+                    <div class="placeholder-panel topography-image">
+                        <a target="_blank" href="@topoViewer">
+                            <img src="~/client/images/lidarViewer.jpg" /></a>
+                    </div>
+                </div>
+                <div class="topography-description">
+                    <div>
+                        <h4>Maryland Topography Viewer</h4>
+                        <p>
+                            The Maryland Topography Viewer is a web application that allows users
+                            to view and interact with the elevation services hosted on the Maryland 
+                            LiDAR Server. Users can view, query, and more on desktop and mobile devices.
+                        </p>
+                        <p>
+                            Explore the Maryland Topography Viewer <a target="_blank" href="@topoViewer">here</a>
+                            <br />
+                            <a href="#fqa"><small>Frequently Asked Questions</small></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
