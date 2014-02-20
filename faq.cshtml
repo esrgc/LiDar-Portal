@@ -1,0 +1,444 @@
+﻿@{
+    Page.Title = "Frequently Asked Questions";
+    Layout = "_SiteLayout.cshtml";
+}
+@{
+    var fullServiceList = "http://lidar.salisbury.edu/arcgis/rest/services/Elevation";
+    var topoViewer = "http://apps.esrgc.org/maps/md-lidar-viewer/ ";
+}
+@section scripts {
+    <script type="text/javascript">
+        $(function() {
+            $(document).on('click', '#fqaToggle a', function(e) {
+                e.preventDefault();
+                $(this).addClass('hidden-content');
+                $(this).siblings().removeClass('hidden-content');
+                if ($(this).attr('data-toggle') == 'expand')
+                    $('#faq .panel-collapse').collapse('show');
+                else
+                    $('#faq .panel-collapse').collapse('hide');
+            });
+        });
+    </script>
+}
+<div class="container">
+    <div class="row" id="faq">
+        <div class="col-sm-12">
+            <h4>
+                <span id="fqaToggle">
+                    <a href="#" data-toggle="expand"><small><i class="fa fa-plus-square-o"></i>&nbsp;Expand all</small></a>
+                    <a href="#" data-toggle="collapse" class="hidden-content"><small><i class="fa fa-minus-square-o"></i>&nbsp;Collapse
+                        all</small></a>
+                </span>
+            </h4>
+            <div>
+                <div class="panel-group" id="accordion">                    
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">How is LiDAR data used?
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <blockquote>
+                                    <div>
+                                        Elevation data are essential to a broad range of applications, including forest 
+                                        resources management, wildlife and habitat management, national security, recreation, 
+                                        and many others. For the State of Maryland, elevation data are critical for agriculture 
+                                        and precision farming, natural resources conservation such as the Chesapeake Bay and its watershed,
+                                        flood risk management, urban and regional planning, infrastructure and construction management, 
+                                        water supply and quality, coastal zone management, and other business uses. Today, high-density 
+                                        light detection and ranging (LiDAR) data are the primary sources for deriving elevation models, 
+                                        LiDAR point data and other associated datasets.                                     
+                                    </div>
+                                    <small><cite>Carswell, William J., Jr. The 3D Elevation Program—Summary for Maryland. Report.</cite></small>
+                                </blockquote>
+
+                                <cite></cite>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">What services are available?
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <p>
+                                    The Maryland LIDAR server has been created to provide open access to statewide elevation
+                                    information for use in a variety of studies and applications.  The Maryland LIDAR server 
+                                    maintains the best available elevation data and provides image services in both county 
+                                    and statewide extents.
+                                </p>
+                                <strong>The Maryland LiDAR server supports multiple image services per county and statewide:</strong>
+                                <ul>
+                                    <li>
+                                        <i>Ground based digital elevation models (DEM) in feet and meters</i>
+                                        <ul>
+                                            <li>
+                                                <p>
+                                                    A digital elevation model, or DEM is a raster representation of the earth’s 
+                                                    surface created from LiDAR elevation data. The most common type of DEM is a 
+                                                    bare earth DEM in which above ground objects like trees and buildings have 
+                                                    been removed. DEMs are utilized for a variety of purposes including hydrology 
+                                                    modeling, viewshed analysis, and line of sight analysis.  DEMs are also the 
+                                                    first step in creating many other important derivative products such as slope, 
+                                                    aspect, and hillshade.
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <i>Color stretched visualization</i>
+                                        <ul>
+                                            <li>
+                                                <p>
+                                                    Color stretched visualizations offer a more dynamic and traditional view of 
+                                                    the DEMs by applying a color ramp to the elevation values.
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <i>Slope</i>
+                                        <ul>
+                                            <li>
+                                                <p>
+                                                    Slope identifies the inclination of the earth’s surface.  
+                                                    The degree or percent of a slope is an important factor when analyzing slope stability, 
+                                                    transportation, agriculture, recreation,etc.  Slope can be used alone or in conjunction 
+                                                    with other layers for various site suitability analysis.
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <i>Aspect</i>
+                                        <ul>
+                                            <li>
+                                                <p>
+                                                    Aspect identifies slope direction in compass degrees where 0=north and 180=south.  
+                                                    Aspect determines how much sunlight will strike the earth’s surface and therefore has 
+                                                    important impacts on ecology, animal and vegetative habitats soil moisture, and many other 
+                                                    biological and physical landscape characteristics.  It is also essential in many alternative 
+                                                    energy project when considering site location of wind or solar facilities.
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <i>Hillshade</i>
+                                        <ul>
+                                            <li>
+                                                <p>
+                                                    Hillshade is used to determine the illumination of the earth’s surface.  
+                                                    It can be used in analysis to understand the time and intensity of the sun at a given 
+                                                    location or for graphical display purposes to enhance the relief of a surface.  
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                @*<i>Map of Data Availability and Status (embedded AGOL map)</i>
+                                <div id="elevationMap">
+                                    <img src="~/client/images/currentAvailableMDElevation.jpg" />
+                                </div>*@
+                                <a target="_blank" href="@fullServiceList">View List of Services</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">How do I access these services?</a>
+                            </h4>
+                        </div>
+                        <div id="collapseFour" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <i>Maryland Topography Viewer</i>
+                                <p>
+                                    The Maryland Topography Viewer is a web mapping application that allows users to 
+                                    view and interact with the elevation services hosted 
+                                    on the Maryland LiDAR Server. Users can view, query, print, and more on desktop and mobile devices.
+                                </p>
+                                <p>
+                                    <a target="_blank" href="@topoViewer"><i>Explore The Maryland Topography Viewer here</i></a>
+                                </p>
+                                <i>ArcGIS Online</i>
+                                <p>
+                                    To view Lidar in ArcGIS online, select any of the image thumbnails above under 
+                                    Statewide or Countywide Services or search for Lidar on the Maryland State 
+                                    ArcGIS online gallery at 
+                                    <a target="_blank" href="http://maryland.maps.arcgis.com/home/index.html ">http://maryland.maps.arcgis.com/home/index.html
+                                    </a>
+                                </p>
+                                <i>ArcGIS Desktop</i>
+                                @*<span>To view in ArcDesktop/Catalog:</span>*@
+                                <ol>
+                                    <li>Launch ArcMap.</li>
+                                    <li>Navigate to the ArcCatalog tab.</li>
+                                    <li>In the ArcCatalog window expand GIS Servers.</li>
+                                    <li>Select Add ArcGIS Server.</li>
+                                    <li>Select Use GIS Services and click Next.</li>
+                                    <li>The Server URL is: http://lidar.salisbury.edu/arcgis</li>
+                                    <li>Click Finish (an alert may pop up notifying that the connection was made successfully).</li>
+                                    <li>
+                                        The new server connection will appear in the ArcCatalog window. After expanding the server, select the
+                                        desired Image Service.
+                                    </li>
+                                </ol>
+                                <strong><small>* Viewing Tip</small></strong><br />
+                                <ul>
+                                    <li>
+                                        ArcGIS Desktop enables the use of raster functions. 
+                                        Functions provide users with fast on-the-fly processing options without changing the actual data.
+                                        Raster functions have been added to all of the countywide dem_m image services.
+                                    </li>
+                                    <li>
+                                        <span>To apply:</span>
+                                        <ul>
+                                            <li>Add in the countywide dem_m service</li>
+                                            <li>Right click the service in the table of contents > Properties > Server Functions</li>
+                                            <li>Select the Functions drop-down</li>
+                                            <li>
+                                                Choose one from the following function: Aspect, DEM_FT, Hillshade, None, Slope, Stretched. > Apply >
+                                                Ok.
+                                            </li>
+                                            <li>
+                                                If choosing DEM_FT, an additional step is necessary.
+                                                <br />
+                                                <ul>
+                                                    <li>Select Symbology > Scroll down to Statistics > Select From Current Display > Apply > Ok.</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <i>QGIS</i>
+                                @*<span>To view in Quantum GIS</span>*@
+                                <ol>
+                                    <li>Select Layer > Add WMS Layer > Select New.</li>
+                                    <li>Name the connection.</li>
+                                    <li>
+                                        Navigate to the service WMS page from the REST services directory and copy/paste the link into the URL
+                                        field.
+                                    </li>
+                                    <li>*These services do not require a username and password.</li>
+                                    <li>Select Ok.</li>
+                                    <li>Select the service in the list of layers > Select Add > Close.</li>
+                                </ol>
+                                <i>Google Earth</i>
+                                @*<span>To view in Google Earth:</span>*@
+                                <ol>
+                                    <li>Select the image service URL to open the service REST page</li>
+                                    <li>On the REST page, select  View In: Google Earth</li>
+                                    <li>This will prompt the download of a kmz file</li>
+                                    <li>Open Google Earth and select File > Open</li>
+                                    <li>Navigate to the download directory, select the downloaded service and select Open</li>
+                                    <li>Double click the service once it appears under the “Places” tab to zoom to the service extent.</li>
+                                </ol>
+                                <i>AutoCAD</i>
+                                <ol>
+                                    <li>Start AutoCAD</li>
+                                    <li>Click the Add Image Server Connection  on the Image Server toolbar.</li>
+                                    <li>The Add Image Server Connection dialog box is displayed.</li>
+                                    <li>
+                                        In the Server Name text box, type the name of the Lidar server:  http://lidar.salisbury.edu/arcgis.
+                                    </li>
+                                    <li>Double -click the Elevation folder to view the contained services.</li>
+                                    <li>
+                                        Double-click the image service in the list, or click the image service and click Select to
+                                        to add the image service to the Selected Services list.
+                                    </li>
+                                    <li>
+                                        The Service Properties dialog box is displayed. This dialog box shows the image service metadata and
+                                        properties that you can view before opening the image service.
+                                    </li>
+                                    <li>
+                                        Click OK to close the Add Image Server Connection dialog box.                                        
+                                    </li>
+                                </ol>
+                                <p>
+                                    <small>Instructions provided by ESRI resources:
+                                        <a target="_blank" href="http://resources.esri.com/help/9.3/ArcGISImageServer/AutoCAD/HTML/index.htm#adding_an_image_service_in_autocad.htm">
+                                            http://resources.esri.com/help/9.3/ArcGISImageServer/AutoCAD/HTML/index.htm#adding_an_image_service_in_autocad.htm
+                                        </a>
+                                    </small>
+                                </p>
+                                <i>Microstation</i>
+                                <ol>
+                                    <li>Start MicroStation.</li>
+                                    <li>Click the Add Server Connection button  in the MicroStation Image Server Client dialog box.</li>
+                                    <li>The Add Image Server Connection dialog box is displayed.</li>
+                                    <li>
+                                        In the Server Name text box, type the name of the Lidar server:  http://lidar.salisbury.edu/arcgis.
+                                    </li>
+                                    <li>Double -click the Elevation folder to view the contained services.</li>
+                                    <li>
+                                        Double-click the image service in the list, or click the image service and click Select to add the image
+                                        service to the Selected Services list.
+                                    </li>
+                                    <li>
+                                        The Service Properties dialog box is displayed. This dialog box shows the image service metadata and
+                                        properties that you can view before opening the image service.
+                                    </li>
+                                    <li>Click OK to close the Add Image Server Connection dialog box.</li>
+                                </ol>
+                                <p>
+                                    <small>Instructions provided by ESRI resources:
+                                        <a target="_blank" href="http://resources.esri.com/help/9.3/ArcGISImageServer/AutoCAD/HTML/index.htm#adding_an_image_service_in_autocad.htm">
+                                            http://resources.esri.com/help/9.3/ArcGISImageServer/AutoCAD/HTML/index.htm#adding_an_image_service_in_autocad.htm
+                                        </a>
+                                    </small>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">How to extract the data for use
+                                    in desktop processing</a>
+                            </h4>
+                        </div>
+                        <div id="collapseFive" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <p>There are several methods to extract LIDAR data for use in desktop processing.</p>
+                                <span>To extract based on a feature defined boundary:</span>
+                                <ol>
+                                    <li>Load the service and feature mask into ArcMap</li>
+                                    <li>In ArcToolbox, select the Extract by Mask tool under Spatial Analyst toolbox</li>
+                                    <li>Select the image service as the input raster and the boundary feature class as the feature mask</li>
+                                    <li>
+                                        Specify the output raster name and directory location where the image will be saved and select OK.
+                                    </li>
+                                    <li>The image will be added to the map after processing.</li>
+                                </ol>
+                                <span>If you do not have the Spatial Analyst extension use the Export by data frame extent.</span>
+                                <ol>
+                                    <li>Load the service into ArcMap</li>
+                                    <li>Zoom to the AOI</li>
+                                    <li>Right-click the service in the TOC and select Data > Export.</li>
+                                    <li>From the Export dialog specify preferences and select Save.</li>
+                                    <li>The image will be added to the map after processing.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix">Where can I find the metadata for
+                                    these services?</a>
+                            </h4>
+                        </div>
+                        <div id="collapseSix" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <p>Complete metadata is available for each county:</p>
+                                <p>
+                                    <a target="_blank" href="~/client/download/Metadata/Allegany/">Allegany</a><br />
+                                    <a target="_blank" href="~/client/download/Metadata/AnneArundel/">AnneArundel</a><br />
+                                    <a target="_blank" href="~/client/download/Metadata/BaltimoreCity/">BaltimoreCity</a><br />
+                                    <a target="_blank" href="~/client/download/Metadata/BaltimoreCounty/">BaltimoreCounty</a><br />
+                                    <a target="_blank" href="~/client/download/Metadata/Calvert/">Calvert</a><br />
+                                    <a target="_blank" href="~/client/download/Metadata/Caroline/">Caroline</a><br />
+                                    <a target="_blank" href="~/client/download/Metadata/Carroll/">Carroll</a><br />
+                                    <a target="_blank" href="~/client/download/Metadata/Charles/">Charles</a><br />
+                                    <a target="_blank" href="~/client/download/Metadata/Dorchester/">Dorchester</a><br />
+                                    <a target="_blank" href="~/client/download/Metadata/Frederick/">Frederick</a><br />
+                                    <a target="_blank" href="~/client/download/Metadata/Garrett/">Garrett</a><br />
+                                    <a target="_blank" href="~/client/download/Metadata/Harford/">Harford</a><br />
+                                    <a target="_blank" href="~/client/download/Metadata/Howard/">Howard</a><br />
+                                    <a target="_blank" href="~/client/download/Metadata/Kent/">Kent</a><br />
+                                    <a target="_blank" href="~/client/download/Metadata/QueenAnnes/">QueenAnnes</a><br />
+                                    <a target="_blank" href="~/client/download/Metadata/Somerset/">Somerset</a><br />
+                                    <a target="_blank" href="~/client/download/Metadata/StMarys/">StMarys</a><br />
+                                    <a target="_blank" href="~/client/download/Metadata/Talbot/">Talbot</a><br />
+                                    <a target="_blank" href="~/client/download/Metadata/Washington/">Washington</a><br />
+                                    <a target="_blank" href="~/client/download/Metadata/Wicomico/">Wicomico</a><br />
+                                    <a target="_blank" href="~/client/download/Metadata/Worcester/">Worcester</a>
+                                </p>
+                                <p>
+                                    <a href="~/client/download/metadata/lidarmetadata_portal.xlsx">Download table view</a>
+                                </p>
+                                <p>*Metadata is also attached to each image service and can be viewed in ArcMap and ArcCatalog.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">Considerations for Usage of Data</a>
+                            </h4>
+                        </div>
+                        <div id="collapseSeven" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <p>
+                                    These LiDAR mosaic data services are high-resolution and thus, extremely large. 
+                                    They are most appropriate for background display, location queries for spot elevations,
+                                     and extraction of small areas (less than 25 sq miles). Your ability to utilize the services 
+                                    will depend on both the download speed of your Internet connection and the number of concurrent 
+                                    users on our servers. If extracting data, please expect the process to take longer than you may be used
+                                    to.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseEight">What if I need to examine a large
+                                    area?</a>
+                            </h4>
+                        </div>
+                        <div id="collapseEight" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <p>
+                                    If you need to analyze an area larger than 25 sq miles at one time or are experiencing 
+                                    extraordinarily long processing times, please contact Erin Silva at 410.677.5482 to obtain 
+                                    a copy of the LiDAR data so that you can work locally.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseNine">Additional LiDAR resources</a>
+                            </h4>
+                        </div>
+                        <div id="collapseNine" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul>
+                                    <li>
+                                        Maryland Department of Natural Resources: 
+                                        <a target="_blank" href="http://www.dnr.state.md.us/gis/">http://www.dnr.state.md.us/gis/</a>
+                                    </li>
+                                    <li>
+                                        NOAA Digital Coast, United States Interagency Elevation Inventory - 
+                                        <a target="_blank" href="http://www.csc.noaa.gov/inventory">http://www.csc.noaa.gov/inventory</a>
+                                    </li>
+                                    <li>
+                                        UGSG National Map Viewer - 
+                                        <a target="_blank" href="http://viewer.nationalmap.gov/viewer">http://viewer.nationalmap.gov/viewer</a>
+                                    </li>
+                                    <li>
+                                        UGSG Earth Explorer - 
+                                        <a target="_blank" href="http://earthexplorer.usgs.gov">http://earthexplorer.usgs.gov</a>
+                                    </li>
+                                </ul>
+                                <p>For more information contact Erin Silva at 410.677.5482 or elsilva@salisbury.edu</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,171 @@
+﻿@{
+    Page.Title = "Statewide Services";
+    Layout = "_SiteLayout.cshtml";
+}
+@{
+    var fullServiceList = "http://lidar.salisbury.edu/arcgis/rest/services/Elevation";
+    var topoViewer = "http://apps.esrgc.org/maps/md-lidar-viewer/ ";
+}
+
+@section scripts {
+    <script type="text/javascript">
+        $(function () {
+            $(document).on('mouseenter', '.topography-image', function (e) {
+                var target = $(this).attr('data-target');
+                // console.log(target);
+                //console.log('enter');
+                if (typeof target != 'undefined') {
+                    $('#description div').addClass('hidden-content');
+                    $(target).removeClass('hidden-content');
+                }
+                //handle backdrop
+                $(this).find('.back-drop').addClass('in');
+
+            });
+            $(document).on('mouseleave', '.topography-image', function (e) {
+                var target = $(this).attr('data-target');
+                //console.log(target);
+                //console.log('leave');
+
+                //handle backdrop
+                $(this).find('.back-drop').removeClass('in');
+                if (typeof target != 'undefined') {
+                    $('#description div').addClass('hidden-content');
+                    //
+                    if ($('#general').hasClass('hidden-content'))
+                        $('#general').removeClass('hidden-content');
+                }
+            });           
+        });
+    </script>
+}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            @*<h4>Maryland LiDAR Server</h4>*@
+            <p>
+                <small>
+                    <i>Hover thumbnails for more information on each derivative product.  Click the thumbnails to view the
+                    products in ArcGIS online</i>
+                </small>
+            </p>
+            <div class="inline-container">                
+                <div class="placeholder-panel topography-image" data-target="#dem">
+
+                    <a target="_blank" href="http://bit.ly/K6NkUq">
+                        @*DEM*@
+                        <div class="back-drop">
+                            <h4>DEM (feet)</h4>
+                        </div>
+                        <img src="~/client/images/SW_dem.JPG" />
+                    </a>
+                </div>
+                <div class="placeholder-panel topography-image" data-target="#dem">
+                    <a target="_blank" href="http://bit.ly/1dPgY9H">
+                        <div class="back-drop">
+                            <h4>DEM (meters)</h4>
+                        </div>
+                        @*DEM*@
+                        <img src="~/client/images/SW_dem.JPG" />
+                    </a>
+                </div>
+                <div class="placeholder-panel topography-image" data-target="#colorStretched">
+                    <a target="_blank" href="http://bit.ly/1dPivws">
+                        <div class="back-drop">
+                            <h4>Color stretched</h4>
+                        </div>
+                        @*Topography image (Color stretched)*@
+                        <img src="~/client/images/SW_stretch.JPG" />
+                    </a>
+                </div>
+                <div class="placeholder-panel topography-image" data-target="#slope">
+                    <a target="_blank" href="http://bit.ly/1dPewQA">
+                        <div class="back-drop">
+                            <h4>Slope</h4>
+                        </div>
+                        @*Topography image (Slope)*@
+                        <img src="~/client/images/SW_slope.JPG" />
+                    </a>
+                </div>
+                <div class="placeholder-panel topography-image" data-target="#aspect">
+
+                    <a target="_blank" href="http://bit.ly/1dPfFrf">
+                        <div class="back-drop">
+                            <h4>Aspect</h4>
+                        </div>
+                        @*Topography image (Aspect)*@
+                        <img src="~/client/images/SW_aspect.JPG" />
+                    </a>
+                </div>
+                <div class="placeholder-panel topography-image" data-target="#hillshade">
+                    <a target="_blank" href="http://bit.ly/1dPkQr2 ">
+                        <div class="back-drop">
+                            <h4>Hillshade</h4>
+                        </div>
+                        @*Topography image (Hillshade)*@
+                        <img src="~/client/images/SW_hillshade.JPG" />
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12" id="description">
+                    <div id="general">
+                        <p>
+                            The Maryland LIDAR server has been created to provide citizens access to statewide 
+                            elevation information for use in a variety of studies and applications.
+                            The Maryland LIDAR server maintains the best available elevation data and 
+                            provides image services in both county and statewide extents. 
+                        </p>
+                        <p>
+                            These services can be used in a variety of software products including ESRI,
+                            Google Earth, and Quantum GIS. See FAQs for instructions, metadata and 
+                            <a target="_blank" href="@fullServiceList">full list of available services.</a>
+                        </p>
+                    </div>
+                    <div class="hidden-content" id="dem">
+                        <p>
+                            A digital elevation model, or DEM is a raster representation of the earth’s 
+                            surface created from LiDAR elevation data. The most common type of DEM is a 
+                            bare earth DEM in which  many objects like trees and buildings have been removed. 
+                            DEMs are utilized for a variety of purposes including hydrology modeling, viewshed 
+                            analysis, and line of sight analysis.  DEMs are also the first step in creating 
+                            many other important derivative products such as slope, aspect, and hillshade.
+                        </p>
+                    </div>
+                    <div class="hidden-content" id="colorStretched">
+                        <p>
+                            Color stretched visualizations offer a more dynamic and traditional view of 
+                            the DEMs by applying a color ramp to the elevation values.
+                        </p>
+                    </div>
+                    <div class="hidden-content" id="slope">
+                        <p>
+                            Slope identifies the inclination of the earth’s surface.  
+                            The degree or percent of a slope is an important factor when analyzing slope stability, 
+                            transportation, agriculture, recreation,etc.  Slope can be used alone or in conjunction 
+                            with other layers for various site suitability analysis.
+                        </p>
+                    </div>
+                    <div class="hidden-content" id="aspect">
+                        <p>
+                            Aspect identifies slope direction in compass degrees where 0=north and 180=south.  
+                            Aspect determines how much sunlight will strike the earth’s surface and therefore has 
+                            important impacts on ecology, animal and vegetative habitats soil moisture, and many other 
+                            biological and physical landscape characteristics. It is also essential in many alternative 
+                            energy project when considering site location of wind or solar facilities.
+                        </p>
+                    </div>
+                    <div class="hidden-content" id="hillshade">
+                        <p>
+                            Hillshade is used to determine the illumination of the earth’s surface.  
+                            It can be used in analysis to understand the time and intensity of the sun at a given 
+                            location or for graphical display purposes to enhance the relief of a surface.  
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class=""></div>
+    </div>
+</div>

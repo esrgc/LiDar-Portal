@@ -201,6 +201,9 @@ h6 {
   border: none;
   margin: 0;
 }
+#statusMapImg {
+  width: 100%;
+}
 #viewer {
   float: left;
 }
